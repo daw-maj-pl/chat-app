@@ -26,7 +26,9 @@ const Message = ({ message }) => {
           }
           alt=""
         />
-        <span>just now</span>
+        <span title={new Date(message.date.seconds * 1000).toLocaleString()}>
+          {new Date(message.date.seconds * 1000).toLocaleString().slice(-8)}
+        </span>
       </div>
       <div className="messageContent">
         <p>{message.text}</p>
